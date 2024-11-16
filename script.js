@@ -93,3 +93,22 @@ function addNewlng(){
 
     lng.insertBefore(newNode,lngaddbtn);
 }
+
+function addNewhbs(){
+    let newNode = document.createElement("textarea");
+    newNode.classList.add("form-control")
+    newNode.classList.add("hbsfeild")
+    newNode.classList.add("col")
+    newNode.style.marginTop = "10px";
+    newNode.style.marginBottom = "5px";
+    newNode.style.padding = "10px";
+    newNode.style.borderRadius = "7px";
+    newNode.style.fontSize = "16px";
+    newNode.setAttribute("rows",5) 
+    newNode.setAttribute("placeholder","Enter Here")
+    
+    let hbs = document.getElementById("hbs")
+    let hnsaddbtn = document.getElementById("hnsaddbtn")
+
+    hbs.insertBefore(newNode,hnsaddbtn);
+}
