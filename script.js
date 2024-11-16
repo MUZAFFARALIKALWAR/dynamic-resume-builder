@@ -112,3 +112,95 @@ function addNewhbs(){
 
     hbs.insertBefore(newNode,hnsaddbtn);
 }
+
+// print
+function genrateCv(){
+//   name
+  let name = document.getElementById("name").value
+  let nameT = document.getElementById("nameT")
+  nameT.innerHTML = name ;
+//    contact
+document.getElementById("contactT").innerHTML = document.getElementById("Contact").value;
+// email
+document.getElementById("emailT").innerHTML=document.getElementById("email").value;
+// address
+document.getElementById("addressT").innerHTML=document.getElementById("address").value;
+// Occupation
+document.getElementById("OccupationT").innerHTML=document.getElementById("Occupation").value;
+// links update
+  let linkfeild = document.getElementById("linkfeild").value
+  let gitfield =document.getElementById("gitfield").value;
+  let linkfeildT = document.getElementById("linkfeildT");
+  let gitfieldT =document.getElementById("gitfieldT");
+  linkfeildT.href = linkfeild;
+  gitfieldT.href = gitfield;
+//   Objectivefeild
+document.getElementById("ObjectiveT").innerHTML=document.getElementById("Objectivefeild").value;
+//    skill
+let skill = document.getElementsByClassName("sklfeild");
+let str = ""
+for(let e of skill){
+    str = str + `<li>${e.value}</li>`
+}
+document.getElementById("skillT").innerHTML = str;
+//    expreince
+let wefeild = document.getElementsByClassName("wefeild");
+let we = ""
+for(let ex of wefeild){
+    we = we + `<li>${ex.value}</li>`
+}
+document.getElementById("exprienceT").innerHTML = we;
+//    edufeild
+let edufeild = document.getElementsByClassName("edufeild");
+let eduF = ""
+for(let ed of edufeild){
+    eduF = eduF + `<li>${ed.value}</li>`
+}
+document.getElementById("educationT").innerHTML = eduF;
+//    langues
+let lngfeild = document.getElementsByClassName("lngfeild");
+let elg = ""
+for(let lg of lngfeild){
+    elg = elg + `<li>${lg.value}</li>`
+}
+document.getElementById("languagesT").innerHTML = elg;
+//    hbsfeild
+let hbsfeild = document.getElementsByClassName("hbsfeild");
+let hbs = ""
+for(let hb of hbsfeild){
+    hbs = hbs + `<li>${hb.value}</li>`
+}
+document.getElementById("hobbiesT").innerHTML = hbs;
+//    profeild
+let profeild = document.getElementsByClassName("profeild");
+let pro = ""
+for(let pr of profeild){
+    pro = pro + `<li>${pr.value}</li>`
+}
+document.getElementById("ProjectsT").innerHTML = pro;
+// print
+document.getElementById("cv-form").style.display = "none";
+document.getElementById("cv-form2").style.display = "none";
+document.getElementById("cv-template").style.display = "block";
+}
+// images
+  // Reference to the file input and the output image
+  let imageUpload = document.getElementById('imageUpload');
+  let output = document.getElementById('output');
+
+  // Add an event listener for the file input
+  imageUpload.addEventListener('change', (event) => {
+      const file = event.target.files[0]; // Get the first file
+
+      if (file) {
+          // Create a URL for the image file
+          const imageUrl = URL.createObjectURL(file);
+          output.src = imageUrl; // Set the image source
+          output.style.display = 'block'; // Make the image visible
+      }
+  });
+
+  function printCV(){
+    window.print();
+  }
+  

@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
+    <header  id="cv-form">
       <div id="header">
        <h2 id="heading">Build Your Professional Resume in Minutes!</h2>
       <p id="description">Create a standout, professional resume effortlessly with our Dynamic Resume Builder. Showcase your unique skills and experience to make a lasting impression on employers.</p>
       </div>
     </header>
     <!-- header complete -->
-     <main id="cv-form">
+     <main id="cv-form2">
         <div class="container1">
                 <!-- left side -->
                  <div>
@@ -38,6 +38,9 @@
 
                             <label class="label" for="address">Address:</label>
                             <textarea rows="5" cols="5" class="input" id="address" placeholder="Enter Here" autocomplete="off"></textarea>
+                             
+                            <label for="imageUpload">Choose an image:</label>
+                            <input type="file" id="imageUpload" accept="image/*" />
 
                           </div> 
                        </div>
@@ -145,21 +148,22 @@
                   </div>
                   
         </div>
-            <button id="genratebtn">Genrate CV</button>
+            <button onclick="genrateCv()" id="genratebtn">Genrate CV</button>
       </main>
          <!-- second form -->
-
-         <main class="main2">
-          <div class="container" id="cv-template">
+         <div id="cv-template">
+         <div class="main" >
+          
+          <div class="container">
           
               <!-- {/* left */} -->
               <div class="left">
    
                 <!-- {/* profile div */} -->
                 <div class="profile">
-                <Image src="/images/khan78-Photoroom.jpg"
-                class="pic"
-                alt="profile"></Image>
+              
+                <img class="pic" id="output" alt="Your uploaded image will appear here." />
+               
                    <!-- {/* main heading */} -->
                    <div class="main-heading ">
                     <h3 class="name" id="nameT">Muzaffar </h3>
@@ -186,8 +190,8 @@
                 <div class="section">
                     <h3>Social Links</h3>
                     <ul>
-                        <li style="font-size: 18px;"><a href="" id="linkT">linkedin</a></li>
-                        <li style="font-size: 18px;"><a href="" id="giT">Github</a></li>
+                        <li style="font-size: 18px;"><a href="#" id="linkfeildT" target="_blank">linkedin</a></li>
+                        <li style="font-size: 18px;"><a href="#" id="gitfieldT" target="_blank">Github</a></li>
                        
                        
                     </ul>
@@ -297,11 +301,12 @@
                   
               </div>
                 <div></div>
-              <button  id="daonload">Daonwload CV</button>
-                
+                <button onclick="printCV()" id="daonload">Daonwload CV</button>
+
           </div>
-          
-    </main>
+                
+        </div>
+    </div>
       
   </body>
   <script src="script.js"></script>
